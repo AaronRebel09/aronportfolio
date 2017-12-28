@@ -1,0 +1,107 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-view4">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+    </style>
+
+    <paper-card heading="Servicio Social" image="images/ss.jpg" class="white" style="margin-top:8px;">
+      <div class="card-content">
+        <h5>
+          <p>A todos los estudiantes interesados,
+            los recibo a través del Proyecto de Servicio Social,
+            Centro Tecnológico Aragón “Desarrollo Tecnológico de Estudios y Proyectos Multidiciplinarios”,
+            Clave: 2017-12/25-2637.</p>          
+        </h5>
+      </div>
+      <div class="card-actions">
+        <paper-button>share</paper-button>
+        <paper-button>Explore!</paper-button>
+      </div>
+    </paper-card>
+
+    <paper-card>
+      <div class="card-content" style="margin-top:8px;">
+        <h5>Las actividades que realizan los estudiantes durante su servicio social a mi cargo se llevan a cabo
+        en el Centro Tecnológico Aragón en un horario flexible y están enfocadas principalmente a:</h5>
+      </div>      
+    </paper-card>
+
+    <paper-card>
+      <div class="card-content" style="margin-top:8px;">
+        <div class="circle">a</div>
+      <h1>Apoyo a la docencia</h1>
+      <p>
+          Incluir en los contenidos de mis actividades docentes conceptos 
+          y actividades relacionadas con la computación y la programación.          
+          Ofrecer ejemplos sencillos y didácticos a los estudiantes 
+          del curso de electricidad y magnetismo con ayuda de materiales-herramientas
+          de cualquier disciplina o materia necesaria, 
+          que aporte al entendimiento de los contenidos de la materia. 
+          (Experimentos, simulaciones, explicaciones, carteles, ejercicios,
+          material bibliográfico complementario, modelos, maquetas, presentaciones, software, etc).          
+          Facilitar a los estudiantes que cursan la materia un espacio de apoyo 
+          que les permita expresar dudas e inquietudes relacionadas con los contenidos del curso.</p>
+      </div>      
+    </paper-card>
+
+
+    <paper-card>
+      <div class="card-content" style="margin-top:8px;">
+        <div class="circle">b</div>
+        <h1>Iniciación a la investigación</h1>
+        <p>Incorporación a los proyectos de investigación:
+            
+            Asistiendo a las reuniones de trabajo
+            
+            Realizando la revisión de textos científicos
+            
+            Estudiando algoritmos 
+            y desarrollando herramientas numéricas
+            para resolver problemas relacionados al proyecto.</p>
+      </div>      
+    </paper-card>     
+
+    <paper-card>
+        <div class="card-content" style="margin-top:8px;">
+          <div class="circle">c</div>
+      <h1>Desarrollo de proyectos ambientales</h1>
+      <p>Proyectos que tengan relación con temas de:
+          Desempeño ambiental y calidad de vida de pequeñas comunidades y centros de producción
+          
+          Buenas Prácticas Ambientales
+          
+          Captación y aprovechamiento de agua de lluvia
+          
+          Análisis del concepto de desarrollo sostenible y de sus aplicaciones</p>
+        </div>        
+      </paper-card>      
+
+  </template>
+
+  <script>
+    class MyView4 extends Polymer.Element {
+      static get is() { return 'my-view4'; }
+    }
+
+    window.customElements.define(MyView4.is, MyView4);
+  </script>
+</dom-module>

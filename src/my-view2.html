@@ -1,0 +1,109 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+<!-- paper-card -->
+    <link rel="import" href="../bower_components/paper-card/paper-card.html">
+
+<dom-module id="my-view2">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+    </style>
+
+
+    <paper-card style="margin-bottom:8px;">
+      <div class="card-content">
+        <p>            
+            A través de diferentes proyectos de investigación, he contribuido 
+            a formar y consolidar grupos de trabajo en estos temas. <br>
+            Actualmente, soy responsable del proyecto DGAPA-PAPIIT IN117817 <br>
+            "Comportamiento de la materia en condiciones extremas en el universo". <br>
+          </p>          
+        <h3>Mi trabajo de investigación se divide en </h3>  
+        <p><div class="circle">2</div> grandes áreas, que he venido siguiendo desde hace varios años.</p>      
+      </div>    
+    </paper-card>
+
+    <div class="horizontal">
+      <paper-card image="images/campomagneticom51.jpg">
+      <div class="card-content horizontal justified" style="margin-right:4px;">
+        <div class="circle">a</div> 
+        <h3>Investigación básica
+            en campos magnéticos y 
+             cosmología.             
+        </h3>        
+          <p>Líneas de investigación; <br>
+          Comportamiento de la 
+          materia en condiciones 
+          extremas:
+          altas temperaturas,  
+          densidades
+          y campos magnéticos.
+          </p>
+          <p>                     
+          Efecto de los campos 
+          magnéticos primordiales 
+          sobre la evolución 
+          del universo temprano, 
+          estudios teóricos
+          y simulaciones numéricas.       
+          Condensados de 
+          Bose-Einstein 
+          en el universo temprano. 
+          Condensados de 
+          Bose-Einstein 
+           en computación cuántica. 
+          </p>                      
+      </div>      
+    </paper-card>
+
+    <paper-card image="images/estudiosamb.jpg">
+      <div class="card-content horizontal justified" style="margin-left:4px;">
+        <div class="circle">b</div>
+        <h3>Investigación aplicada <br>
+            en estudios ambientales.</h3>
+          <p> Líneas de investigación; <br>
+              Desempeño ambiental y 
+              calidad de vida 
+              de pequeñas 
+              comunidades y 
+              centros 
+              de producción 
+              Buenas prácticas 
+              ambientales 
+              Captación y 
+              aprovechamiento 
+              de agua de lluvia       
+              Análisis del 
+              concepto de 
+              desarrollo 
+              sostenible y 
+              de sus aplicaciones 
+          </p>
+      </div>      
+    </paper-card>
+    </div>    
+
+  </template>
+
+  <script>
+    class MyView2 extends Polymer.Element {
+      static get is() { return 'my-view2'; }
+    }
+
+    window.customElements.define(MyView2.is, MyView2);
+  </script>
+</dom-module>

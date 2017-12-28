@@ -1,0 +1,75 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+<!-- paper-card -->
+    <link rel="import" href="../bower_components/paper-card/paper-card.html">
+
+<dom-module id="my-view3">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+    </style>
+
+<paper-card>
+  <div class="card-content">
+    <h3>Mi labor docente se divide en </h3>
+  <p><div class="circle">2</div> niveles</p>      
+  </div>  
+</paper-card>
+
+<paper-card image="images/icoaragon.jpg">
+  <div class="card-content">
+    <div class="circle">a</div> <h3>Licenciatura</h3>
+    Ingeniería en computación en la FES Aragón, la materia de la cual soy responsable es:
+    <p>
+    Electricidad y Magnetismo <br>
+    -Temario <br>
+    -Bibliografia Recomendada <br>
+    -Examen muestra <br>
+    -Solución al exámen muestra <br>
+    Evaluación <br>
+    Tesis <br>
+    Dirijo tesis en temas relacionados con cómputo científico con opción a beca de proyecto DGAPA-PAPIIT. 
+    <p>
+    
+  </div>  
+</paper-card>
+
+<paper-card image="images/unam_posgrado.jpg">
+  <div class="card-content">
+    <div class="circle">b</div>
+    <h3>Programa de Posgrado en ingeniería.</h3>    
+      <p> 
+      Me desempeño como tutora del programa de Posgrado en Ingeniería de la FES Aragón, 
+      campo de conocimiento Ingeniería de Sistemas, y soy responsable de las materias de:
+      Temas selectos de matemáticas:Estadística Avanzada
+      -Temario
+      Evaluación
+      Proyecto de investigación III
+      </p>    
+  </div>
+</paper-card>
+
+  </template>
+
+  <script>
+    class MyView3 extends Polymer.Element {
+      static get is() { return 'my-view3'; }
+    }
+
+    window.customElements.define(MyView3.is, MyView3);
+  </script>
+</dom-module>
