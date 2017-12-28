@@ -33,22 +33,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template>
     <style>
       :host {
-        /*UNAM App color*/
+        /*aron Portfolio App color*/
         /* Color Tool https://material.io/color/#!/?view.left=0&view.right=0&primary.color=0277BD&secondary.color=F9A825&secondary.text.color=000000&primary.text.color=ffffff */
         /* light blue */
-        --app-primary-color: #0277bd;
-        --app-primary-light-color: #58a5f0;
-        --app-primary-dark-color: #004c8c;
+        --app-primary-color: #d81b60;
+        --app-primary-light-color: #ff5c8d;
+        --app-primary-dark-color: #a00037;
         /* yellow */
-        --app-secondary-color: #f9a825; 
-        --app-secondary-light-color:#ffd95a;
-        --app-secondary-dark-color:#c17900;
+        --app-secondary-color: #0277bd; 
+        --app-secondary-light-color: #58a5f0; 
+        --app-secondary-dark-color: #004c8c; 
 
         --app-primary-text-color:#ffffff;
         --app-secondary-text-color:#000000;        
         
         --app-drawer-content-container: {
-          background-color: var(--app-secondary-dark-color);
+          background-color: var(--app-secondary-dark-color);          
         };    
         
         display: block;
@@ -100,15 +100,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <app-drawer-layout fullbleed narrow="{{narrow}}">
       <!-- Drawer content -->
       <app-drawer id="drawer" opened slot="drawer" swipe-open="[[narrow]]">        
-        <app-toolbar>
-            <img style="height:60px;" src="images/logounam.png">
+        <app-toolbar>            
+            <!-- <img style="height:60px;" src="images/logounam.png"> -->
         </app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="view1" href="[[rootPath]]view1">Presentaci&oacute;n</a>
-          <a name="view2" href="[[rootPath]]view2">Investigaci&oacute;n</a>
-          <a name="view3" href="[[rootPath]]view3">Docencia</a>
-          <a name="view4" href="[[rootPath]]view4">Servicio Social</a>
-          <a name="view5" href="[[rootPath]]view5">Contacto</a>
+          <img style="height:20%;" src="images/aron.png">
+          <a name="view1" href="[[rootPath]]view1">Presentation</a>
+          <a name="view2" href="[[rootPath]]view2">Portfolio</a>
+          <a name="view3" href="[[rootPath]]view3">My Skills & Offer</a>
+          <a name="view4" href="[[rootPath]]view4">Contact</a>
+          <br>
+          <a name="view5" href="[[rootPath]]view5">about me</a>
         </iron-selector>      
       </app-drawer>
 
@@ -118,7 +120,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <app-header slot="header" reveals condenses effects="waterfall">
           <app-toolbar>
             <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
-            <div main-title align="center">Laboratorio C&oacute;mputo Cient&iacute;fico</div>
+            <div main-title align="center">Aaron Portfolio</div>
           </app-toolbar>
         </app-header>
 
