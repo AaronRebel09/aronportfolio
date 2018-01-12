@@ -35,20 +35,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       :host {
         /*aron Portfolio App color*/
         /* Color Tool https://material.io/color/#!/?view.left=0&view.right=0&primary.color=0277BD&secondary.color=F9A825&secondary.text.color=000000&primary.text.color=ffffff */
-        /* light blue */
+        /* Pink */
         --app-primary-color: #d81b60;
         --app-primary-light-color: #ff5c8d;
         --app-primary-dark-color: #a00037;
-        /* yellow */
+        /* milk*/ 
+        --app-milk-color: #f5f5f5;
+        /* light blue */
         --app-secondary-color: #0277bd; 
         --app-secondary-light-color: #58a5f0; 
         --app-secondary-dark-color: #004c8c; 
 
         --app-primary-text-color:#ffffff;
-        --app-secondary-text-color:#000000;        
+        --app-secondary-text-color:#000000;                      
         
         --app-drawer-content-container: {
-          background-color: var(--app-secondary-dark-color);          
+          /*background-color: var(--app-secondary-dark-color);          */
+          background-color: var(--app-milk-color);          
         };    
         
         display: block;
@@ -67,15 +70,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         --paper-icon-button-ink-color: white;
       }
 
+       .under
+        {
+            position:absolute;
+            left:0px;
+            top:0px;
+            z-index:-1;
+        }
+        .over
+        {
+            position:absolute;
+            left:40px;
+            top:10px;
+            z-index:-1;
+            border-radius: 50%;
+        }
+
       .drawer-list {
-        margin: 0 20px;
+        margin: 0 20px;        
       }
 
       .drawer-list a {
         display: block;
         padding: 0 16px;
         text-decoration: none;
-        color: var(--app-primary-text-color);
+        color: var(--app-secondary-text-color);
         line-height: 40px;
       }
 
@@ -100,11 +119,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <app-drawer-layout fullbleed narrow="{{narrow}}">
       <!-- Drawer content -->
       <app-drawer id="drawer" opened slot="drawer" swipe-open="[[narrow]]">        
-        <app-toolbar>            
-            <!-- <img style="height:60px;" src="images/logounam.png"> -->
-        </app-toolbar>
-        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <img style="height:20%;" src="images/aron.png">
+        <app-toolbar>  
+          <img style="width:100%; height: 100%;" src="images/mdesign.png" class="under">
+          <img style="height:80%;" src="images/aron.png" class="over">                                
+        </app-toolbar>        
+        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">          
           <a name="view1" href="[[rootPath]]view1">Presentation</a>
           <a name="view2" href="[[rootPath]]view2">Portfolio</a>
           <a name="view3" href="[[rootPath]]view3">My Skills & Offer</a>
