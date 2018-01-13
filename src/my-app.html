@@ -20,6 +20,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-icons/communication-icons.html">
+<link rel="import" href="../bower_components/iron-icons/social-icons.html">
 <link rel="import" href="my-icons.html">
 
 <link rel="lazy-import" href="my-view1.html">
@@ -124,12 +127,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <img style="height:80%;" src="images/aron.png" class="over">                                
         </app-toolbar>        
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">          
-          <a name="view1" href="[[rootPath]]view1">Presentation</a>
-          <a name="view2" href="[[rootPath]]view2">Portfolio</a>
-          <a name="view3" href="[[rootPath]]view3">My Skills & Offer</a>
-          <a name="view4" href="[[rootPath]]view4">Contact</a>
+          <a name="view1" href="[[rootPath]]view1">
+            <iron-icon icon="icons:home"></iron-icon>
+            Presentation
+          </a>
+          <a name="view2" href="[[rootPath]]view2">
+            <iron-icon icon="icons:work"></iron-icon>
+          Portfolio
+          </a>
+          <a name="view3" href="[[rootPath]]view3">
+            <iron-icon icon="icons:build"></iron-icon>
+          My Skills & Offer
+          </a>
+          <a name="view4" href="[[rootPath]]view4">
+            <iron-icon icon="communication:contact-phone"></iron-icon>
+          Contact</a>
           <br>
-          <a name="view5" href="[[rootPath]]view5">about me</a>
+          <a name="view5" href="[[rootPath]]view5">
+            <iron-icon icon="social:person"></iron-icon>
+          about me</a>
         </iron-selector>      
       </app-drawer>
 
