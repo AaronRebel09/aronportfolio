@@ -11,7 +11,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
 <link rel="import" href="shared-styles.html">
-
+  <!-- Iron Image -->
+  <link rel="import" href="../bower_components/iron-image/iron-image.html">
+  <!-- Iron Flex -->
+  <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
 <dom-module id="my-view5">
   <template>
     <style include="shared-styles">
@@ -20,18 +23,36 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         padding: 10px;
       }
+
+      .flex-horizontal {
+          @apply --layout-horizontal;            
+        }
+        .flexchild-horizontal {
+          @apply --layout-flex;
+        }
+        #example-half-width {
+          width: 90%;
+          --iron-image-width: 100%;
+        }
+
     </style>
 
     <h1>about me</h1>   
 
-    <paper-card>
-      <div class="card-content">
-          <p>I'm Front End Developer from Mexico City.
-
-              I enjoy turning complex problems into simple, beautiful and intuitive interface designs. When I'm not coding, you'll find me in the gym or reading books.              
-          </p>
-      </div>
-    </paper-card>
+    <div class="container flex-horizontal">      
+        <!-- First Column -->
+        <div class="flexchild-horizontal">          
+            <iron-image alt="aron" src="images/aron_selfie.jpg" id="example-half-width"></iron-image>
+        </div>      
+        <!-- Second Column -->
+        <div class="flexchild-horizontal">
+            <div class="card">
+                <p>I'm Front End Developer from Mexico City.
+                    I enjoy turning complex problems into simple, beautiful and intuitive interface designs. When I'm not coding, you'll find me in the gym or reading books.              
+                </p>
+            </div>
+        </div>      
+      </div>         
 
     <paper-card image="images/books/isaac_asimov.png">
         <div class="card-content">

@@ -14,6 +14,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <!-- Import Web Components -->  
   <!-- paper-card -->
     <link rel="import" href="../bower_components/paper-card/paper-card.html">
+  <!-- Iron Flex -->
+  <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+  <!-- Iron Image -->
+  <link rel="import" href="../bower_components/iron-image/iron-image.html">
 
 <dom-module id="my-view1">
   <template>
@@ -32,18 +36,39 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           --paper-slide-height: 100%;
           --paper-slide-dot: rgba(120,144,156 ,.8);
           --paper-slide-dot-selected: rgb(237, 238, 238);
+        }                
+        .flex-horizontal {
+          @apply --layout-horizontal;            
+          @apply --layout-center-justified;
         }
+        .flexchild-horizontal {
+          @apply --layout-flex;
+        }
+        #example-half-width {
+          width: 90%;
+          --iron-image-width: 100%;
+        }
+        #example2-half-width {          
+          width: 40%;
+          --iron-image-width: 100%;
+        }
+
       </style>
     </custom-style>   
-      
-    <paper-card image="images/aron_selfie.jpg">
-      <div class="card-content" style="margin-top:8px;">
-        <h3>Hi, I'm Aaron. <br></h3>
-        <p>
-          I am web developer specialized in front-end development.
-        </p>      
-      </div>      
-    </paper-card>   
+    
+    <!-- 1 Row -->
+    <div class="container flex-horizontal">            
+      <h3>Hi, I'm Aaron. <br></h3>
+    </div>  
+    <!-- 2 Row -->    
+    <div class="container flex-horizontal">  
+      <iron-image alt="aron" src="images/aron_zelda.jpg" id="example2-half-width"></iron-image>      
+    </div>
+    <!-- 3 Row -->
+    <div class="container flex-horizontal">          
+      <h4>Web developer specialized in front-end.</h4>            
+    </div>
+
 
   </template>
 
