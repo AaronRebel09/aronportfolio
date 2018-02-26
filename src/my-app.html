@@ -73,6 +73,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         --paper-icon-button-ink-color: white;
       }
 
+      .white{
+        background-color:#ffffff;
+        border-radius: 40%;
+        width: 6%;
+        height: 6%;      
+      }
+
        .under
         {
             position:absolute;
@@ -155,7 +162,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <app-header slot="header" reveals condenses effects="waterfall">
           <app-toolbar>
             <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
-            <div main-title align="center">Aaron Portfolio</div>
+            <div main-title align="center">
+              <iron-icon src="images/ico/facebook.svg" class="white"></iron-icon>
+              <iron-icon src="images/ico/twitter.svg" class="white"></iron-icon>
+              <iron-icon src="images/ico/instagram.svg" class="white"></iron-icon>
+              <iron-icon src="images/ico/github.svg" class="white"></iron-icon>
+              <iron-icon src="images/ico/youtube.svg" class="white"></iron-icon>
+              <iron-icon src="images/ico/linkedin.svg" class="white"></iron-icon>
+            </div>
           </app-toolbar>
         </app-header>
 
