@@ -112,6 +112,82 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: black;
         font-weight: bold;
       }
+
+      /*begin menu */
+      * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    padding: 20px;
+    background: #eee;
+    user-select: none;
+  }
+  
+  [type=radio] {
+    display: none;
+  }
+  
+  #slider {
+    height: 35vw;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+  
+  #slider label {
+    margin: auto;
+    width: 60%;
+    height: 100%;
+    border-radius: 4px;
+    position: absolute;
+    left: 0; right: 0;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+  }
+  
+  #s1:checked ~ #slide4, #s2:checked ~ #slide5,
+  #s3:checked ~ #slide1, #s4:checked ~ #slide2,
+  #s5:checked ~ #slide3 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+  }
+  
+  #s1:checked ~ #slide5, #s2:checked ~ #slide1,
+  #s3:checked ~ #slide2, #s4:checked ~ #slide3,
+  #s5:checked ~ #slide4 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+  }
+  
+  #s1:checked ~ #slide1, #s2:checked ~ #slide2,
+  #s3:checked ~ #slide3, #s4:checked ~ #slide4,
+  #s5:checked ~ #slide5 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(0,0,0);
+  }
+  
+  #s1:checked ~ #slide2, #s2:checked ~ #slide3,
+  #s3:checked ~ #slide4, #s4:checked ~ #slide5,
+  #s5:checked ~ #slide1 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(15%,0,-100px);
+  }
+  
+  #s1:checked ~ #slide3, #s2:checked ~ #slide4,
+  #s3:checked ~ #slide5, #s4:checked ~ #slide1,
+  #s5:checked ~ #slide2 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+  }
+  
+  #slide1 { background: #00BCD4 }
+  #slide2 { background: #4CAF50 }
+  #slide3 { background: #CDDC39 }
+  #slide4 { background: #FFC107 }
+  #slide5 { background: #FF5722 }
+      /* end menu */
     </style>
 
     <app-location
@@ -126,14 +202,43 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         tail="{{subroute}}">
     </app-route>
 
-    <app-drawer-layout fullbleed narrow="{{narrow}}">
-      <!-- Drawer content -->
-      <app-drawer id="drawer" opened slot="drawer" swipe-open="[[narrow]]">        
-        <app-toolbar>  
-          <img style="width:100%; height: 100%;" src="images/mdesign.png" class="under">
-          <img style="height:80%;" src="images/aron.png" class="over">                                
-        </app-toolbar>        
-        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">          
+    
+         
+        
+          <!-- <img style="width:100%; height: 100%;" src="images/mdesign.png" class="under">
+          <img style="height:80%;" src="images/aron.png" class="over">                                 -->
+             
+                 
+
+      
+
+        
+          
+            <!-- <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
+            <div main-title align="center">
+              <iron-icon src="images/ico/facebook.svg" class="white"></iron-icon>
+              <iron-icon src="images/ico/twitter.svg" class="white"></iron-icon>
+              <iron-icon src="images/ico/instagram.svg" class="white"></iron-icon>
+              <iron-icon src="images/ico/github.svg" class="white"></iron-icon>
+              <iron-icon src="images/ico/youtube.svg" class="white"></iron-icon>
+              <iron-icon src="images/ico/linkedin.svg" class="white"></iron-icon>
+            </div> -->
+              
+
+        <iron-pages
+            selected="[[page]]"
+            attr-for-selected="name"
+            fallback-selection="view1"
+            role="main">
+          <my-view1 name="view1"></my-view1>
+          <my-view2 name="view2"></my-view2>
+          <my-view3 name="view3"></my-view3>
+          <my-view4 name="view4"></my-view4>
+          <my-view5 name="view5"></my-view5>
+          <my-view404 name="view404"></my-view404>
+        </iron-pages>      
+
+        <!-- <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">          
           <a name="view1" href="[[rootPath]]view1">
             <iron-icon icon="icons:home"></iron-icon>
             Presentation
@@ -150,43 +255,51 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <iron-icon icon="communication:contact-phone"></iron-icon>
           Contact</a>
           <br>
-          <a name="view5" href="[[rootPath]]view5">
+          <a name="view5" href="[[rootPath]]view5<iron-icon icon="icons:build"></iron-icon>
+          My Skills & Offer">
             <iron-icon icon="social:person"></iron-icon>
           about me</a>
-        </iron-selector>      
-      </app-drawer>
-
-      <!-- Main content -->
-      <app-header-layout has-scrolling-region>
-
-        <app-header slot="header" reveals condenses effects="waterfall">
-          <app-toolbar>
-            <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
-            <div main-title align="center">
-              <iron-icon src="images/ico/facebook.svg" class="white"></iron-icon>
-              <iron-icon src="images/ico/twitter.svg" class="white"></iron-icon>
-              <iron-icon src="images/ico/instagram.svg" class="white"></iron-icon>
-              <iron-icon src="images/ico/github.svg" class="white"></iron-icon>
-              <iron-icon src="images/ico/youtube.svg" class="white"></iron-icon>
-              <iron-icon src="images/ico/linkedin.svg" class="white"></iron-icon>
-            </div>
-          </app-toolbar>
-        </app-header>
-
-        <iron-pages
-            selected="[[page]]"
-            attr-for-selected="name"
-            fallback-selection="view1"
-            role="main">
-          <my-view1 name="view1"></my-view1>
-          <my-view2 name="view2"></my-view2>
-          <my-view3 name="view3"></my-view3>
-          <my-view4 name="view4"></my-view4>
-          <my-view5 name="view5"></my-view5>
-          <my-view404 name="view404"></my-view404>
-        </iron-pages>
-      </app-header-layout>
-    </app-drawer-layout>
+        </iron-selector>    -->
+        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+          <section id="slider">
+            <input type="radio" name="slider" id="s1">
+            <input type="radio" name="slider" id="s2">
+            <input type="radio" name="slider" id="s3" checked>
+            <input type="radio" name="slider" id="s4">
+            <input type="radio" name="slider" id="s5">
+            <label for="s1" id="slide1">
+              <a name="view5" href="[[rootPath]]view5">                              
+                  <iron-icon icon="social:person"></iron-icon>
+                About me
+              </a>
+            </label>
+            <label for="s2" id="slide2">
+              <a name="view3" href="[[rootPath]]view3">
+                <iron-icon icon="icons:build"></iron-icon>
+                My Skills & Offer
+              </a>
+            </label>
+            <label for="s3" id="slide3">
+              <a name="view1" href="[[rootPath]]view1">
+                <iron-icon icon="icons:home"></iron-icon>
+                Presentation
+              </a>
+            </label>
+            <label for="s4" id="slide4">
+              <a name="view2" href="[[rootPath]]view2">
+                <iron-icon icon="icons:work"></iron-icon>
+                Portfolio
+              </a>
+            </label>
+            <label for="s5" id="slide5">
+              <a name="view4" href="[[rootPath]]view4">
+                <iron-icon icon="communication:contact-phone"></iron-icon>
+                Contact
+              </a>
+            </label>
+          </section>  
+        </iron-selector>
+          
   </template>
 
   <script>
