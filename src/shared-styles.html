@@ -14,15 +14,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <dom-module id="shared-styles">
   <template>
     <style>
+      .window{
+        text-align: center;
+        margin: 12px;
+        padding: 12px;
+        color: #000;
+        border-radius: 24px;
+        background-color: goldenrod;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        height: 70vh;
+      }
       .card {    
         text-align: center;
-        margin: 1px;
-        padding: 2px;
+        margin: 12px;
+        padding: 12px;
         color: #000;
-        border-radius: 2px;
+        border-radius: 24px;
         background-color: #fff;
         box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-        height: 80vh;
+        height: 20vh;
       }
 
       .circle {
@@ -50,6 +60,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       paper-card.black {
       --paper-card-header-color: #000;
       }
+
+      .swipeDis {
+          /* --paper-slide-width: 300px; */
+          --paper-slide-height: 100%;
+          --paper-slide-dot: rgba(120,144,156 ,.8);
+          --paper-slide-dot-selected: rgb(237, 238, 238);
+        }                
+        .flex {
+          @apply --layout-horizontal;
+        }
+        .flex-horizontal {
+          @apply --layout-horizontal;            
+          @apply --layout-center-justified;
+        }
+        .flexchild-horizontal {
+          @apply --layout-flex;
+        }      
+        #example-half-width {
+          width: 90%;
+          --iron-image-width: 100%;
+        }
+        #example2-half-width {          
+          width: 30%;
+          --iron-image-width: 100%;
+        }
 
     </style>
   </template>
